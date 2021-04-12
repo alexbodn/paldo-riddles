@@ -1,0 +1,9 @@
+{{#> layout title=title }}
+
+    {{#*inline "content"}}
+        {{#each riddle}}
+        <p>Key: {{@key}}, Value: {{this}} &nbsp;</p>
+        {{/each}}
+    {{/inline}}
+
+{{/layout}}
