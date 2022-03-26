@@ -1,0 +1,2 @@
+curl -H "Content-Type: application/json" -X POST -d '{"slug": "no-body", "question": "I have a head & no body, but I do have a tail. What am I?", "answer": "A coin"}' http://localhost:3000/riddle
+curl -H "Content-Type: application/json" -X POST -d '{"slug": "see-saw", "question": "We see it once in a year, twice in a week, but never in a day. What is it?", "answer": "The letter E"}' http://localhost:3000/riddle
