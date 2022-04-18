@@ -1,0 +1,27 @@
+{{#> layout title=title }}
+        
+    {{#*inline "head-block"}}
+        <style type="text/css">
+          .field_label span {
+            vertical-align: top;
+          }
+        </style>
+    {{/inline}}
+
+    {{#*inline "content"}}
+        <div>
+        {{#each menu_options}}
+        <a href="{{this.href}}">{{this.text}}</a>
+        {{/each}}
+        {{userId}}
+        </div>
+
+    <form action="{{action}}" method="{{method}}">
+        {{#each fields}}
+        <p>{{{elementBuilder this}}}</p>
+        {{/each}}
+        <p><input type="submit" value="submit" /></p>
+    </form>
+    {{/inline}}
+
+{{/layout}}

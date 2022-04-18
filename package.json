@@ -10,7 +10,8 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node server",
+    "start": "npx nodemon server",
+    "start0": "node server",
     "test": "lab -a @hapi/code -I \"__core-js_shared__,CSS,regeneratorRuntime,core\" -L",
     "test0": "lab -a @hapi/code -L",
     "lint": "eslint .",
@@ -27,8 +28,12 @@
     "@hapipal/haute-couture": "4.x.x",
     "@hapipal/schwifty": "6.x.x",
     "better-sqlite3": "^7.5.0",
+    "create-html-element": "^4.0.1",
     "joi": "17.x.x",
-    "objection": "2.x.x"
+    "nodemailer": "^6.7.3",
+    "objection": "2.x.x",
+    "secure-password": "4.x.x",
+    "slugify": "1.x.x"
   },
   "peerDependencies": {
     "knex": "0.21.x",
@@ -36,6 +41,7 @@
     "joi": "17.x.x"
   },
   "devDependencies": {
+    "nodemon": "^2.0.15",
     "@babel/preset-env": "7.x.x",
     "@babel/core": "7.x.x",
     "@hapi/code": "8.x.x",
@@ -46,11 +52,14 @@
     "@hapi/hoek": "9.x.x",
     "@hapi/inert": "6.x.x",
     "@hapi/lab": "24.x.x",
+    "@hapi/jwt": "2.x.x",
+    "@hapi/bounce": "2.x.x",
     "@hapi/vision": "6.x.x",
     "@hapipal/confidence": "6.x.x",
     "@hapipal/hpal": "3.x.x",
     "@hapipal/hpal-debug": "2.x.x",
     "@hapipal/toys": "3.x.x",
+    "@hapipal/schmervice": "2.x.x",
     "babel-eslint": "10.x.x",
     "babelify": "10.x.x",
     "browser-sync": "2.x.x",
