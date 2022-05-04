@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const buildOptions = (options, headers, json) => {
   const needed_headers = {
@@ -7,9 +7,9 @@ const buildOptions = (options, headers, json) => {
   };
 
   const req_options = {
-    ...options, 
+    ...options,
     headers: {
-      ...needed_headers, 
+      ...needed_headers,
       ...headers,
     },
   };

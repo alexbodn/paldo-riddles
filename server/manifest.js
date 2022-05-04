@@ -55,7 +55,8 @@ module.exports = new Confidence.Store({
                         isHttpOnly: true,    // prevent client alteration
                         clearInvalid: false, // remove invalid cookies
                         strictHeader: true,  // don't allow violations of RFC 6265
-                        path: '/'            // set the cookie for all routes
+                        path: '/',            // set the cookie for all routes
+                        //isSameSite: 'Lax',
                     },
                 }
             },
@@ -65,7 +66,7 @@ module.exports = new Confidence.Store({
                     $filter: 'NODE_ENV',
                     $default: {},
                     $base: {
-                        migrateOnStart: true,
+                        migrateOnStart: false,
                         knex: {
                             client: 'sqlite3',
                             useNullAsDefault: true,     // Suggested for sqlite3
