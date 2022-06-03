@@ -1,0 +1,11 @@
+{
+  "name": "elementbuilder",
+  "version": "1.0.0",
+  "description": "build compound and simple html elements by a tag and atributes, and various data needed to build the text of that element.",
+  "main": "elementBuilder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alexbodn@gmail.com",
+  "license": "ISC"
+}

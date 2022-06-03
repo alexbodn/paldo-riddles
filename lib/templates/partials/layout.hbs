@@ -15,6 +15,13 @@
     </head>
 
     <body>
+        <div>
+        {{#if flashMessage}}{{render flashMessage}}{{/if}}
+        {{#each menu_options}}
+        {{{render this}}}
+        {{/each}}
+        {{userId}}
+        </div>
         {{#> content}}
             {{!-- Content goes here. --}}
         {{/content}}

@@ -1,0 +1,11 @@
+{
+  "name": "whatobj",
+  "version": "1.0.0",
+  "description": "a collection of isXXX functions, like isString, isArray etc.",
+  "main": "whatobj.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alexbodn@gmail.com",
+  "license": "ISC"
+}

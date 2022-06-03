@@ -1,0 +1,12 @@
+{
+  "name": "websend",
+  "version": "1.0.0",
+  "description": "functions to send data by web in json format",
+  "main": "webSend.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
