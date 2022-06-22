@@ -23,7 +23,7 @@ const render = (element) => {
     if (isString(element)) {
       return element;
     }
-    var {tag, html, text, __class, __id, ...attribs} = element;
+    var {tag, html, text, __class, __id, __style, ...attribs} = element;
     text = html || text || '';
     if (isObject(text)) {
       text = JSON.stringify(text, null, 2);
@@ -35,6 +35,7 @@ const render = (element) => {
     Object.assign(attribs, {
       'class': __class || false,
       'id': __id || false,
+      style: __style || false,
     });
     for (const [attr, value] of Object.entries(attribs)) {
         if (value === false) {
@@ -204,6 +205,105 @@ const table = (data) => {
   return render(table);
 };
 
+const ul = (data) => {
+  let {__elements, ...attribs} = data;
+  let elements = __elements.map(element => render({tag: 'li', text: render(element)}));
+  return {tag: 'ul', ...attribs, text: render(elements)};
+};
+
+const bs_dropdown = (elements) => {
+  let {__id, __label, __labeledby, __elements} = elements;
+  const dd_elements = (elements) => {
+    return elements.map(element => {
+      if (element.tag == 'header') {
+        return {tag: 'h6', __class: 'dropdown-header', text: element.text};
+      }
+      else if (element.tag == 'a') {
+        return {...element, __class: 'dropdown-item'};
+      }
+      else if (element === 'divider') {
+        return {tag: 'hr', __class: 'dropdown-divider'};
+      }
+      else if (isObject(element)) {
+        return {...element, __class: 'dropdown-item-text'};
+      }
+    });
+  }
+  let content = '';
+  if (isArray(__elements[0])) {
+    const valid_cols = [6, 4, 3, 2];
+    let ncols, nrows;
+    for (nrows = 1; ; ++nrows) {
+      if (__elements.length / 2 <= valid_cols[1]) {
+        nrows = 2;
+        break;
+      }
+      else if (__elements.length / nrows <= valid_cols[0]) {
+        break;
+      }
+    }
+    ncols = Math.floor(__elements.length / nrows) + (__elements.length % nrows ? 1 : 0);
+    let rows = new Array;
+    for (let c = 0; c < nrows; ++c) {
+      rows.push([]);
+    }
+    for (let c in __elements) {
+      let row = Math.floor(c / ncols);
+      rows[row].push(__elements[c]);
+    }
+    let maxcols = 0;
+    let rowtags = new Array;
+    for (let row of rows) {
+      let ncols = row.length;
+      while (!valid_cols.includes(ncols)) {
+        ++ncols;
+      }
+      if (ncols > maxcols) {
+        maxcols = ncols;
+      }
+      let parts = 12 / ncols;
+      const col = (elements) => {
+        let __elements = dd_elements(elements);
+        return {
+          tag: 'div',
+          __class: `col-sm-${parts}`,
+          text: render(ul({__elements, __class: "multi-column-dropdown"})),
+        };
+      };
+      rowtags.push({tag: 'div', __class: 'row', text: render(row.map(col))});
+    }
+    let classes = [
+      'dropdown-menu', 'multi-column', `columns-${maxcols}`, 'w-100'
+    ];
+    content = render({
+      tag: 'ul',
+      text: render(rowtags),
+      __class: classes,
+      //__style: "right: 0 !important; left: auto !important;",
+      'aria-labeledby': __id,
+    });
+  }
+  else {
+    __elements = dd_elements(__elements);
+    content = ul({__elements, __class: 'dropdown-menu', 'aria-labeledby': __id})
+  }
+  return render([
+    {
+      tag: 'a',
+      __class: 'nav-link dropdown-toggle',
+      href: '#',
+      __id,
+      'data-bs-toggle': 'dropdown',
+      'aria-expanded': 'false',
+//      'data-reference': 'parent',
+//      'data-target': '#navbar-id',
+//      'data-boundary': 'scrollParent',
+      text: __label,
+    },
+    content,
+  ]);
+};
+
 const form_field = (element) => {
     var {__val, __label, __errmsg, ...elem} = element;
     setval(elem, __val || '');
@@ -284,4 +384,5 @@ module.exports = {
   form_field: form_field,
   table_form: table_form,
   labeled_form: labeled_form,
+  bs_dropdown: bs_dropdown,
 };

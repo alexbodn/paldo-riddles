@@ -61,16 +61,6 @@ module.exports = new Confidence.Store({
                         path: '/',          // set the cookie for all routes
                         //isSameSite: 'Lax',
                     },
-                    session_options : {
-                        ttl: 24 * 60 * 60 * 1000, // expires after a day
-                        encoding: 'base64json',    // we already used JWT to encode
-                        isSecure: true,     // warm & fuzzy feelings
-                        isHttpOnly: true,   // prevent client alteration
-                        clearInvalid: true, // remove invalid cookies
-                        strictHeader: true, // don't allow violations of RFC 6265
-                        path: '/',          // set the cookie for all routes
-                        //isSameSite: 'Lax',
-                    },
                 }
             },
             {

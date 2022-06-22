@@ -16,7 +16,6 @@
 
     <body>
         <div>
-        {{#if flashMessage}}{{render flashMessage}}{{/if}}
         {{#each menu_options}}
         {{{render this}}}
         {{/each}}
@@ -26,19 +25,12 @@
             {{!-- Content goes here. --}}
         {{/content}}
 
+        <script>{{{flashMessage}}}</script>
         {{#if options.developmentMode}}
             <script src="{{baseURI}}/public/js/main.build.js"></script>
-            <!--script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script-->
         {{else}}
             <script src="{{baseURI}}/public/js/main.build.min.js"></script>
-            <!--script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script-->
         {{/if}}
-        <!--script>
-            $('input[type="textarea"]').each(function(index) {
-                var elem = $(this);
-                elem.replaceWith($('<textarea/>').attr('name', elem.attr('name')).val(elem.val()));
-            });
-        </script-->
 
         {{#> scripts-block}}
             {{!-- Custom scripts per page can be added. --}}

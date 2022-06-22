@@ -1,0 +1,221 @@
+<!doctype html>
+<html class="h-100">
+    <head>
+        <title>{{title}}</title>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.88.1">
+
+        {{#if options.developmentMode}}
+            <link rel="stylesheet" href="{{baseURI}}/public/css/main.build.css">
+        {{else}}
+            <link rel="stylesheet" href="{{baseURI}}/public/css/main.build.min.css">
+        {{/if}}
+
+        {{#> head-block}}
+            {{!-- Custom <head> content per page could be added. --}}
+        {{/head-block}}
+    </head>
+
+    <body class="d-flex flex-column h-100">
+      <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="navbar-id">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Fixed navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto mb-2 mb-md-0" style="--bs-scroll-height: 180px;">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              
+              <li class="nav-item dropdown">
+	            <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Three Column</a>
+	            <ul class="dropdown-menu multi-column columns-3" aria-labelledby="dropdown03">
+		            <div class="row">
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 1</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 2</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 3</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+		            </div>
+		            <div class="row">
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 1</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 2</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 3</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+		            </div>
+		            <div class="row">
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 1</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 2</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+			            <div class="col-sm-4">
+				            <ul class="multi-column-dropdown">
+				              <li><h6 class="dropdown-header">header 3</h6></li>
+					            <li><a class="dropdown-item" href="#">Action</a></li>
+					            <li><a class="dropdown-item" href="#">Another action</a></li>
+					            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                      <li><hr class="dropdown-divider"></li>
+					            <li><a class="dropdown-item" href="#">One more separated link</a></li>
+				            </ul>
+			            </div>
+		            </div>
+	            </ul>
+	        </li>
+              
+              <li class="nav-item dropdown">
+                {{{bs_dropdown menu_options 'Actions Dropdown' 'dropdown02'}}}
+              </li>
+              
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      
+      <div id="liveAlertPlaceholder"></div>
+      <!--button type="button" class="btn btn-primary" id="liveAlertBtn">Show live alert</button-->
+      </header>
+
+      <main class="flex-shrink-0">
+        <div class="container">
+        <!--div>
+        {{#each menu_options}}
+        {{{render this}}}
+        {{/each}}
+        {{userId}}
+        </div-->
+        {{#> content}}
+            {{!-- Content goes here. --}}
+        {{/content}}
+
+        </div>
+      </main>
+      
+      <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+          <span class="text-muted">Place sticky footer content here.</span>
+        </div>
+      </footer>
+
+        <script>{{{flashMessage}}}</script>
+        {{#if options.developmentMode}}
+            <script src="{{baseURI}}/public/js/main.build.js"></script>
+        {{else}}
+            <script src="{{baseURI}}/public/js/main.build.min.js"></script>
+        {{/if}}
+        {{#> scripts-block}}
+            {{!-- Custom scripts per page can be added. --}}
+        {{/scripts-block}}
+    </body>
+</html>

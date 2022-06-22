@@ -10,12 +10,12 @@
     "test": "test"
   },
   "scripts": {
-    "start": "npx nodemon -V -L -w ${ROOT_DIR} --ignore ${ROOT_DIR}/lib/public ${ROOT_DIR}/server",
-    "start0": "node ${ROOT_DIR}/server",
+    "start": "npx nodemon --polling-interval 2000 --verbose --legacy-watch --watch ${ROOT_DIR} --ignore ${ROOT_DIR}/lib/public ${ROOT_DIR}/server",
+    "start0": "node --inspect ${ROOT_DIR}/server",
     "test": "lab -a @hapi/code -I \"__core-js_shared__,CSS,regeneratorRuntime,core\" -L",
     "test0": "lab -a @hapi/code -L",
     "lint": "eslint ${ROOT_DIR}/.",
-    "prebuild:css": "sass ${ROOT_DIR}/lib/public/css/main.scss ${ROOT_DIR}/lib/public/css/main.build.css --source-map",
+    "prebuild:css": "sass --load-path=${NODE_LOCAL} ${ROOT_DIR}/lib/public/css/main.scss ${ROOT_DIR}/lib/public/css/main.build.css --source-map",
     "-prebuild:css": "node-sass lib/public/css/main.scss ${ROOT_DIR}/lib/public/css/main.build.css --source-map true",
     "build:css": "postcss ${ROOT_DIR}/lib/public/css/main.build.css -o ${ROOT_DIR}/lib/public/css/main.build.min.css --use cssnano --no-map",
     "prebuild:js": "browserify ${ROOT_DIR}/lib/public/js/main.js -o ${ROOT_DIR}/lib/public/js/main.build.js -d -t [ babelify --presets [ @babel/preset-env ] ]",
@@ -26,16 +26,20 @@
     "@hapi/boom": "9.x.x",
     "@hapi/inert": "6.x.x",
     "@hapi/vision": "6.x.x",
+    "@hapi/yar": "^10.1.1",
     "@hapipal/haute-couture": "4.x.x",
     "@hapipal/schwifty": "6.x.x",
     "better-sqlite3": "^7.5.0",
+    "bootstrap": "^5.1.3",
     "create-html-element": "^4.0.1",
     "joi": "17.x.x",
+    "jquery": "^3.6.0",
     "nodemailer": "^6.7.3",
     "objection": "2.x.x",
     "sass": "^1.51.0",
     "secure-password": "4.x.x",
-    "slugify": "1.x.x"
+    "slugify": "1.x.x",
+    "uniq": "^1.0.1"
   },
   "peerDependencies": {
     "handlebars": "4.x.x",
@@ -72,12 +76,14 @@
     "exiting": "6.x.x",
     "hapi-swagger": "14.x.x",
     "knex": "0.21.x",
-    "node-sass": "5.x.x",
     "nodemon": "^2.0.15",
     "postcss": "8.x.x",
     "postcss-cli": "8.x.x",
     "sqlite3": "5.x.x",
     "uglify-js": "3.x.x"
+  },
+  "ignoredDependencies": {
+    "node-sass": "5.x.x"
   },
   "workspaces": [
     "packages/whatobj",
